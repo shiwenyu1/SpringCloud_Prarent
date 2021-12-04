@@ -1,0 +1,32 @@
+#修改当前程序的端口号
+server:
+  port: 9527
+#当前微服务取别名
+spring:
+  application:
+    name: biemingApp
+eureka:
+  client: #客户端注册进eureka服务列表内
+    service-url:
+      #defaultZone: http://localhost:7001/eureka
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/		#集群版
+  instance:
+    instance-id: getaway-9527.com #给当前服务取别名
+    prefer-ip-address: true #可以将微服务别名对应到具体的IP地址
+
+#当前服务的简要信息
+info:
+  app.name: zuul-microcloud
+  company.name: www.zuul.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+# 网址增加前后缀
+zuul:
+  routes:
+    mydept.serviceId: biemingApp
+    mydept.path: /bieming/**
+  #设置原服务各不可用
+ # ignored-services: biemingapp  #禁止用微服务名访问数据
+  prefix: /zuul   #前缀
+  ignored-services: "*"
+

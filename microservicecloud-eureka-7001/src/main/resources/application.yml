@@ -1,0 +1,12 @@
+#修改当前程序的端口号
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: eureka7001.com #(把当前eureka子项目部署在本地URL的名称)
+  client:
+    register-with-eureka: true #关闭eureka自我注册的功能
+    fetch-registry: true #是否要获取其它服务的信息
+    service-url:
+     # defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #当前连接时Eureka官方指定写法，需要与官网保持一致
+      defaultZone:  http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/

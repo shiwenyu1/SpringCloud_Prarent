@@ -1,0 +1,13 @@
+# Project exclude paths
+/microservicecloud-consumer-dept-8080/target/
+/microservicecloud-consumer-dept-feign/target/
+/microservicecloud-eureka-7001/target/
+/microservicecloud-eureka-7002/target/
+/microservicecloud-eureka-7003/target/
+/microservicecloud-provider-dept-8002/target/
+/microservicecloud-provider-dept-8003/target/
+/microservicecloud-provider-dept-hystrix-8001/target/
+/microservicecloud-provider-dept-hystrix-dashboard/target/
+/microservicecloud-zull-gateway-9527/target/
+/microservicecloud_api/target/
+/microservicecloud_provider/target/
